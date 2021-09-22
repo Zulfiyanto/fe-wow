@@ -1,0 +1,35 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-image: url("../img/Vector.svg");
+  background-position: right;
+  background-repeat: no-repeat;
+  height: 100vh;
+  padding-left: 5rem;
+}
+.icon {
+  margin: 4rem 0 3rem 0;
+}
+.icon img {
+  width: 36%;
+}
+.description {
+  width: 40%;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 33px;
+  margin-bottom: 4rem;
+}
+
+.btn-home button {
+  width: 14%;
+  margin-right: 2rem;
+  height: 7vh;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  font-weight: 700;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
