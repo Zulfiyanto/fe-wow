@@ -33,3 +33,53 @@
   font-size: 1.3rem;
   cursor: pointer;
 }
+
+.modal-title {
+  padding: 41px 35px 20px 45px !important;
+  font-size: 3rem !important;
+  font-weight: 700 !important;
+}
+.input-box {
+  padding: 0 33px;
+}
+
+.input-email,
+.input-password,
+.input-fullname {
+  margin-bottom: 20px;
+}
+
+.input-email input,
+.input-password input,
+.input-fullname input {
+  width: 400px;
+  height: 7vh;
+  border-radius: 5px;
+  outline: none;
+  border: 2px solid #5e5e5e40;
+  background-color: #b4b4b440;
+  padding-left: 5px;
+}
+
+.modal-button {
+  margin: 11px 0;
+  width: 400px;
+  height: 7vh;
+  background-color: #d60000 !important;
+  border: none !important;
+  font-weight: 700 !important;
+  font-size: 1.2rem !important;
+}
+
+.already-account {
+  font-size: 1.4rem;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.already-account a {
+  font-weight: 700;
+  color: black;
+  text-decoration: none !important;
+}
