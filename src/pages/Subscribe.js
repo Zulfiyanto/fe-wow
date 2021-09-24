@@ -7,7 +7,7 @@ import ProfileSide from "../components/ProfileSideBar";
 import SubscribeSection from "../components/SubscribeSection";
 
 const Subscribe = () => {
-  const [showPopUp, setShowPopUp] = useState(true);
+  const [showPopUp, setShowPopUp] = useState(false);
   const handleShowPopUp = () => setShowPopUp(true);
   return (
     <Container className="padding-container" fluid="true">

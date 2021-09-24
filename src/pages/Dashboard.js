@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Modal, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import Logo from "../img/Icon1.png";
 import "./Dashboard.css";
 
@@ -62,7 +63,10 @@ const Dashboard = () => {
               Sign Up
             </Button>
             <div className="already-account">
-              Already have an account ? Klik <a href="#">Here</a>
+              Already have an account ? Klik
+              <a href="#" onClick={handleShowLogin}>
+                Here
+              </a>
             </div>
           </div>
         </Modal.Body>
@@ -83,16 +87,21 @@ const Dashboard = () => {
                 placeholder="Password"
               />
             </div>
-            <Button
-              className="modal-button"
-              variant="primary"
-              type="submit"
-              onClick={handleCloseLogin}
-            >
-              Sign Up
-            </Button>
+            <Link to="/Home">
+              <Button
+                className="modal-button"
+                variant="primary"
+                type="submit"
+                onClick={handleCloseLogin}
+              >
+                Sign Up
+              </Button>
+            </Link>
             <div className="already-account">
-              Don't have an account ? Klik <a href="#">Here</a>
+              Don't have an account ? Klik
+              <a href="#" onClick={handleShowRegist}>
+                Here
+              </a>
             </div>
           </div>
         </Modal.Body>

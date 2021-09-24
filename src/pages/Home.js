@@ -6,7 +6,7 @@ import "./Home.css";
 import ProfileSide from "../components/ProfileSideBar";
 import HomeSection from "../components/HomeSection";
 const Home = () => {
-  const [showPopUp, setShowPopUp] = useState(true);
+  const [showPopUp, setShowPopUp] = useState(false);
   const handleShowPopUp = () => setShowPopUp(true);
   return (
     <Container className="padding-container" fluid="true">
