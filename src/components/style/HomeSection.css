@@ -1,0 +1,47 @@
+.right-section {
+  overflow: auto;
+  height: 100vh;
+}
+.right-section::-webkit-scrollbar {
+  width: 5px;
+  height: 30%;
+}
+.banner-section {
+  margin: 50px 0;
+}
+.banner-section img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+.title {
+  font-weight: 700;
+  font-size: 2.8rem;
+  margin-bottom: 45px;
+}
+.list {
+  display: flex !important;
+  flex-wrap: wrap !important;
+}
+.list-book {
+  margin-bottom: 60px;
+}
+.card {
+  border: none !important;
+  width: 90% !important;
+}
+.card img {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.title-card {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 14px;
+}
+.writer {
+  font-weight: normal;
+  font-size: 1.4rem;
+  color: #929292;
+}

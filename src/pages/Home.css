@@ -2,116 +2,6 @@
   padding: 0 50px;
 }
 
-.leftbar-profile {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100vh;
-}
-.leftbar-top {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 80%;
-}
-.photo-profile img,
-.logo img {
-  width: 120px;
-  margin-bottom: 30px;
-}
-.logo img {
-  margin-top: 20px;
-  transform: rotate(-20deg);
-}
-.photo-profile img {
-  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25);
-  border-radius: 50%;
-}
-.username {
-  font-size: 1.6rem;
-  font-weight: 900;
-  margin-bottom: 10px;
-}
-.subscribe-status {
-  font-size: 1.3rem;
-  margin-bottom: 10px;
-  color: #d60000;
-  font-weight: 700;
-}
-.profile-nav {
-  border-top: 1px solid #c9c9c9;
-  padding-top: 50px;
-}
-.subscribe-nav {
-  border-bottom: 1px solid #c9c9c9;
-  padding-bottom: 50px;
-  margin-bottom: 20px !important;
-}
-
-.profile-nav,
-.subscribe-nav,
-.logout {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  margin-bottom: 60px;
-  font-size: 1.4rem;
-  font-weight: 400;
-}
-.profile-nav img,
-.subscribe-nav img,
-.logout img {
-  margin-right: 28px;
-}
-
-.right-section {
-  overflow: auto;
-  height: 100vh;
-}
-.right-section::-webkit-scrollbar {
-  width: 5px;
-  height: 30%;
-}
-.banner-section {
-  margin: 50px 0;
-}
-.banner-section img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-}
-.title {
-  font-weight: 700;
-  font-size: 2.8rem;
-  margin-bottom: 45px;
-}
-.list {
-  display: flex !important;
-  flex-wrap: wrap !important;
-}
-.list-book {
-  margin-bottom: 60px;
-}
-.card {
-  border: none !important;
-  width: 90% !important;
-}
-.card img {
-  width: 100%;
-  margin-bottom: 20px;
-}
-
-.title-card {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 14px;
-}
-.writer {
-  font-weight: normal;
-  font-size: 1.4rem;
-  color: #929292;
-}
-
 .popup-title {
   height: 15vh;
   width: 100%;
@@ -120,4 +10,16 @@
   align-items: center;
   color: red;
   font-size: 1.5rem;
+}
+
+.popup-title-success {
+  height: 15vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #29bd11;
+  font-size: 1.5rem;
+  padding: 80px;
 }
