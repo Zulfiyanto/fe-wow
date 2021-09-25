@@ -4,7 +4,9 @@ import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import Subscribe from "./pages/Subscribe";
 
-import { Switch, Route, useLocation } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
+import DetailBook from "./pages/DetailBook";
+import ReadBook from "./pages/ReadBook";
 
 function App() {
   return (
@@ -21,6 +23,12 @@ function App() {
         </Route>
         <Route path="/Profile">
           <Profile />
+        </Route>
+        <Route path="/Detail">
+          <DetailBook />
+        </Route>
+        <Route path="/Read">
+          <ReadBook /> 
         </Route>
       </Switch>
     </div>

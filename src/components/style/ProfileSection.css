@@ -1,12 +1,3 @@
-.profile-section {
-  overflow: scroll;
-  height: 100vh;
-}
-
-.profile-section::-webkit-scrollbar {
-  width: 5px;
-  height: 30%;
-}
 
 .profile {
   margin-top: 30px;

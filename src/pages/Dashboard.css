@@ -3,6 +3,7 @@
   flex-direction: column;
   justify-content: flex-start;
   background-image: url("../img/Vector.svg");
+  background-size: contain;
   background-position: right;
   background-repeat: no-repeat;
   height: 100vh;

@@ -11,7 +11,7 @@ import "./style/ProfileSection.css";
 
 const ProfileSection = () => {
   return (
-    <div className="profile-section">
+    <div className="right-section">
       <div className="profile">
         <div className="title">Profile</div>
         <div className="box-profile">
