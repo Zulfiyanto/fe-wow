@@ -23,3 +23,34 @@
   font-size: 1.5rem;
   padding: 80px;
 }
+
+.tb-section {
+  display: flex;
+  justify-content: center;
+}
+.table-section {
+  margin-top: 80px;
+  width: 90%;
+}
+
+.borderless th {
+  border: none !important;
+  color: #ff0000;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.table-body td {
+  font-size: 1.5rem;
+}
+
+.dropdown-table-success {
+  color: #0acf83 !important;
+  font-size: 1.5rem;
+}
+.dropdown-table-danger {
+  color: #ff0000 !important;
+  font-size: 1.5rem;
+}
+.dropdown-menu-table {
+  width: 0px !important;
+}
