@@ -8,6 +8,7 @@ import { Switch, Route } from "react-router-dom";
 import DetailBook from "./pages/DetailBook";
 import ReadBook from "./pages/ReadBook";
 import Transaction from "./pages/Transactions";
+import AddBook from "./pages/AddBook";
 
 function App() {
   return (
@@ -33,6 +34,9 @@ function App() {
         </Route>
         <Route path="/Transaction">
           <Transaction />
+        </Route>
+        <Route path="/Add">
+          <AddBook />
         </Route>
       </Switch>
     </div>

@@ -17,12 +17,7 @@ const SubscribeSection = () => {
           <input type="text" placeholder="Input your account number" />
         </div>
         <div className="upload-subs">
-          <input
-            type="file"
-            name="uploadfile"
-            id="img"
-            style={{ display: "none" }}
-          />
+          <input type="file" name="uploadfile" id="img" style={{ display: "none" }} />
           <label for="img">Attache proof of transfer</label>
           <img src={Clip} />
         </div>
