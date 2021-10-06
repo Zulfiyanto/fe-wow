@@ -1,5 +1,6 @@
 .banner-section {
   margin: 50px 0;
+  position: relative;
 }
 .banner-section img {
   max-width: 100%;

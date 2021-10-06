@@ -1,31 +1,78 @@
+// Import Library
 import { useState } from "react";
-import { Modal, Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import Logo from "../img/Icon1.png";
+import { useHistory } from "react-router";
+// Import Component
+import { user } from "../database/data";
+import { ModalLogin, ModalRegist } from "../components/ModalComponent";
+// Import Style
 import "./Dashboard.css";
+// Import Photo
+import Logo from "../assets/img/Icon1.png";
 
 const Dashboard = () => {
+  // State
+  const [Data, setData] = useState({ email: "", name: "", password: "", isLogin: false });
+  const [admin, setAdmin] = useState(false);
+  // modal state
   const [showRegister, setShowRegister] = useState(false);
   const [showLogin, setShowLogin] = useState(false);
+  // Modal handler
   const handleShowRegist = () => setShowRegister(true);
   const handleShowLogin = () => setShowLogin(true);
   const handleCloseLogin = () => setShowLogin(false);
   const handleCloseRegister = () => setShowRegister(false);
+
+  const { name, email, password, isLogin } = Data;
+  let history = useHistory();
+
+  // Function
+  const OnChange = (e) => {
+    setData({ ...Data, [e.target.name]: e.target.value });
+  };
+
+  const OnSubmit = (e) => {
+    e.preventDefault();
+    user.push(Data); 
+  };
+
+  const LoginSubmit = (e) => {
+    e.preventDefault();
+    const emails = document.getElementById("email").value;
+    const password = document.getElementById("pass").value;
+    for (let i = 0; i < user.length; i++) {
+      if (
+        user[i].email === emails &&
+        user[i].password === password &&
+        !user[i].email.includes("admin")
+      ) {
+        setData({ isLogin: true });
+      } else if (user[i].email === emails) {
+        setAdmin(true);
+      }
+    }
+  };
+
+  const handlePushHome = () => {
+    history.push("/Home");
+  };
+  const handlePushAdmin = () => {
+    history.push("/Transaction");
+  };
+  console.log(admin);
   return (
     <>
+      {admin && handlePushAdmin()}
+      {isLogin && handlePushHome()}
       <div className="section">
         <div className="icon">
           <img src={Logo} alt="" />
         </div>
-        <div className="description">
-          Sign-up now and subscribe to enjoy all the cool and latest books - The
-          best book rental service provider in Indonesia
+        <div className="description-dash">
+          Sign-up now and subscribe to enjoy all the cool and latest books - The best book rental
+          service provider in Indonesia
         </div>
         <div className="btn-home">
-          <button
-            style={{ backgroundColor: "#D60000", color: "white" }}
-            onClick={handleShowRegist}
-          >
+          <button style={{ backgroundColor: "#D60000", color: "white" }} onClick={handleShowRegist}>
             Sign Up
           </button>
           <button
@@ -36,76 +83,24 @@ const Dashboard = () => {
           </button>
         </div>
       </div>
-      <Modal show={showRegister} onHide={handleCloseRegister}>
-        <Modal.Title className="modal-signup">Sign Up</Modal.Title>
-        <Modal.Body>
-          <div className="input-box">
-            <div className="input-email">
-              <input type="email" placeholder="Email" />
-            </div>
-            <div className="input-password">
-              <input
-                type="password"
-                name="password"
-                id="pass"
-                placeholder="Password"
-              />
-            </div>
-            <div className="input-fullname">
-              <input type="text" placeholder="Full Name" />
-            </div>
-            <Button
-              className="modal-button"
-              variant="primary"
-              type="submit"
-              onClick={handleCloseRegister}
-            >
-              Sign Up
-            </Button>
-            <div className="already-account">
-              Already have an account ? Klik
-              <a href="#" onClick={handleShowLogin}>
-                Here
-              </a>
-            </div>
-          </div>
-        </Modal.Body>
-      </Modal>
+      <ModalRegist
+        name={name}
+        email={email}
+        pass={password}
+        submit={OnSubmit}
+        change={OnChange}
+        showLogin={handleShowLogin}
+        showRegist={showRegister}
+        showRegister={handleShowRegist}
+        hideRegist={handleCloseRegister}
+      />
 
-      <Modal show={showLogin} onHide={handleCloseLogin}>
-        <Modal.Title className="modal-signup">Sign In</Modal.Title>
-        <Modal.Body>
-          <div className="input-box">
-            <div className="input-email">
-              <input type="email" placeholder="Email" />
-            </div>
-            <div className="input-password">
-              <input
-                type="password"
-                name="password"
-                id="pass"
-                placeholder="Password"
-              />
-            </div>
-            <Link to="/Home">
-              <Button
-                className="modal-button"
-                variant="primary"
-                type="submit"
-                onClick={handleCloseLogin}
-              >
-                Sign Up
-              </Button>
-            </Link>
-            <div className="already-account">
-              Don't have an account ? Klik
-              <a href="#" onClick={handleShowRegist}>
-                Here
-              </a>
-            </div>
-          </div>
-        </Modal.Body>
-      </Modal>
+      <ModalLogin
+        showLogin={showLogin}
+        submit={LoginSubmit}
+        hideLogin={handleCloseLogin}
+        showRegist={handleShowRegist}
+      />
     </>
   );
 };

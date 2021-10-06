@@ -4,10 +4,11 @@ import Email from "../assets/icon/MailIcon.svg";
 import Gender from "../assets/icon/GenderIcon.svg";
 import Telp from "../assets/icon/TelpIcon.svg";
 import Point from "../assets/icon/PointIcon.svg";
-import PhotoProfile from "../img/Photo-profile.jpg";
-import book1 from "../img/Sample1.png";
+import PhotoProfile from "../assets/img/Photo-profile.jpg";
+import book4 from "../assets/img/sample4.png";
 // Import Style
 import "./style/ProfileSection.css";
+import { Link } from "react-router-dom";
 
 const ProfileSection = () => {
   return (
@@ -40,9 +41,7 @@ const ProfileSection = () => {
             <div className="list-profile">
               <img src={Point} alt="" />
               <div className="text-profile">
-                <div className="text-top">
-                  Perumahan Permata Bintaro Residence C-3
-                </div>
+                <div className="text-top">Perumahan Permata Bintaro Residence C-3</div>
                 <div className="text-bottom">Address</div>
               </div>
             </div>
@@ -57,18 +56,20 @@ const ProfileSection = () => {
           </div>
         </div>
       </div>
-      <div className="list-book">
-        <div className="title">My List Book</div>
-        <Row className="list">
-          <Col md={3}>
-            <div className="card">
-              <img src={book1} alt="" rounded />
-              <div className="title-card">Serangkai</div>
-              <div className="writer">Valerie Patkar</div>
-            </div>
-          </Col>
-        </Row>
-      </div>
+      <Link to="/Detail">
+        <div className="list-book">
+          <div className="title">My List Book</div>
+          <Row className="list">
+            <Col md={3}>
+              <div className="card">
+                <img src={book4} alt="" rounded />
+                <div className="title-card">Tess on the Road</div>
+                <div className="writer">Rachel Hartman</div>
+              </div>
+            </Col>
+          </Row>
+        </div>
+      </Link>
     </div>
   );
 };

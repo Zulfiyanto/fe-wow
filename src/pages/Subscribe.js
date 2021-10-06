@@ -9,6 +9,7 @@ import SubscribeSection from "../components/SubscribeSection";
 const Subscribe = () => {
   const [showPopUp, setShowPopUp] = useState(false);
   const handleShowPopUp = () => setShowPopUp(true);
+  const handleHidePopUp = () => setShowPopUp(false);
   return (
     <Container className="padding-container" fluid="true">
       <Row>
@@ -16,13 +17,13 @@ const Subscribe = () => {
           <ProfileSide />
         </Col>
         <Col md={10}>
-          <SubscribeSection />
+          <SubscribeSection modal={showPopUp} hide={handleShowPopUp} />
         </Col>
       </Row>
-      <Modal show={showPopUp} onHide={handleShowPopUp} size="lg">
+      <Modal show={showPopUp} onHide={handleHidePopUp} size="lg">
         <div className="popup-title-success">
-          Thank you for subscribing to premium, your premium package will be
-          active after our admin approves your transaction, thank you
+          Thank you for subscribing to premium, your premium package will be active after our admin
+          approves your transaction, thank you
         </div>
       </Modal>
     </Container>

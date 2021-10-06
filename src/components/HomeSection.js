@@ -2,50 +2,48 @@ import { Col, Row } from "react-bootstrap";
 // Import Style
 import "./style/HomeSection.css";
 // Import Photo
-import banner from "../img/Banner.png";
-import book1 from "../img/Sample1.png";
-import book2 from "../img/sample2.png";
-import book3 from "../img/sample3.png";
-import book4 from "../img/sample4.png";
-const HomeSection = () => {
+import banner from "../assets/img/Banner.png";
+import { book, user } from "../database/data";
+import { Link } from "react-router-dom";
+import { useState } from "react";
+
+const HomeSection = (props) => {
+  const [users] = useState(user[0]);
+  const [books] = useState(book[0]);
   return (
     <div className="right-section">
       <div className="banner-section">
         <img src={banner} alt="" />
+        <img
+          style={{ position: "absolute", left: "1000px", top: "40px", width: "18%" }}
+          src={books.image}
+          alt=""
+        />
       </div>
       <div className="list-book">
         <div className="title">List Book</div>
         <Row className="list">
-          <Col md={3}>
-            <div className="card">
-              <img src={book1} alt="" rounded />
-              <div className="title-card">Serangkai</div>
-              <div className="writer">Valerie Patkar</div>
-            </div>
-          </Col>
-          <Col md={3}>
-            <div className="card">
-              <img src={book2} alt="" rounded />
-              <div className="title-card">
-                Z1 - Sd/Mi Buku Siswa Tematik T...
-              </div>
-              <div className="writer">Afi Yustiyana</div>
-            </div>
-          </Col>
-          <Col md={3}>
-            <div className="card">
-              <img src={book3} alt="" rounded />
-              <div className="title-card">Kabar Rahasia Dari Alam Kubu ...</div>
-              <div className="writer">DR. Kamil Yusuf Al-Atum</div>
-            </div>
-          </Col>
-          <Col md={3}>
-            <div className="card">
-              <img src={book4} alt="" rounded />
-              <div className="title-card">Tess on the Road</div>
-              <div className="writer">Rachel Hartmanr</div>
-            </div>
-          </Col>
+          {book.map((state, i) => (
+            <Col md={3} key={i}>
+              {users.subscribe ? (
+                <Link to="/Detail">
+                  <div className="card">
+                    <img src={state.image} alt="img" rounded />
+                    <div className="title-card">{state.title}</div>
+                    <div className="writer">{state.writer}</div>
+                  </div>
+                </Link>
+              ) : (
+                <Link onClick={props.modal} to="/Home">
+                  <div className="card">
+                    <img src={state.image} alt="img" rounded />
+                    <div className="title-card">{state.title}</div>
+                    <div className="writer">{state.writer}</div>
+                  </div>
+                </Link>
+              )}
+            </Col>
+          ))}
         </Row>
       </div>
     </div>
